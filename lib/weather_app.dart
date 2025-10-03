@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flutter/hourly_forecast_component.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({super.key});
@@ -54,7 +55,27 @@ class WeatherApp extends StatelessWidget {
 
             // Forecast card
             const SizedBox(height: 25),
-            Placeholder(fallbackHeight: 150),
+            Container(
+              alignment: AlignmentGeometry.centerLeft,
+              child: Text(
+                'Weather Forecast',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+              ),
+            ),
+
+            const SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                spacing: 4,
+                children: [
+                  HourlyForecastComponent(),
+                  HourlyForecastComponent(),
+                  HourlyForecastComponent(),
+                  HourlyForecastComponent(),
+                ],
+              ),
+            ),
 
             // Additional information
             const SizedBox(height: 25),
