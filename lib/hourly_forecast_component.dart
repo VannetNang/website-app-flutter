@@ -18,7 +18,7 @@ class HourlyForecastComponent extends StatelessWidget {
                 '09:00',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              Icon(Icons.cloud, size: 40),
+              Icon(Icons.cloud, size: 35),
               Text('301.17'),
             ],
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_flutter/additional_information_component.dart';
 import 'package:weather_app_flutter/hourly_forecast_component.dart';
 
 class WeatherApp extends StatelessWidget {
@@ -79,7 +80,23 @@ class WeatherApp extends StatelessWidget {
 
             // Additional information
             const SizedBox(height: 25),
-            Placeholder(fallbackHeight: 150),
+            Container(
+              alignment: AlignmentGeometry.centerLeft,
+              child: Text(
+                'Additional Information',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+              ),
+            ),
+
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                AdditionalInformationComponent(),
+                AdditionalInformationComponent(),
+                AdditionalInformationComponent(),
+              ],
+            ),
           ],
         ),
       ),
