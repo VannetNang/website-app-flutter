@@ -54,10 +54,10 @@ class WeatherApp extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                  
+
                           SizedBox(height: 16),
                           Icon(Icons.cloud, size: 60),
-                  
+
                           SizedBox(height: 16),
                           Text('Rain', style: TextStyle(fontSize: 16)),
                         ],
@@ -84,10 +84,26 @@ class WeatherApp extends StatelessWidget {
               child: Row(
                 spacing: 2,
                 children: [
-                  HourlyForecastComponent(),
-                  HourlyForecastComponent(),
-                  HourlyForecastComponent(),
-                  HourlyForecastComponent(),
+                  HourlyForecastComponent(
+                    hourlyTime: '9:00',
+                    hourlyIcon: Icons.thunderstorm,
+                    hourlyTemp: '296.12',
+                  ),
+                  HourlyForecastComponent(
+                    hourlyTime: '9:00',
+                    hourlyIcon: Icons.sunny,
+                    hourlyTemp: '296.12',
+                  ),
+                  HourlyForecastComponent(
+                    hourlyTime: '9:00',
+                    hourlyIcon: Icons.cloud,
+                    hourlyTemp: '296.12',
+                  ),
+                  HourlyForecastComponent(
+                    hourlyTime: '9:00',
+                    hourlyIcon: Icons.sunny,
+                    hourlyTemp: '296.12',
+                  ),
                 ],
               ),
             ),
@@ -106,9 +122,21 @@ class WeatherApp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                AdditionalInformationComponent(),
-                AdditionalInformationComponent(),
-                AdditionalInformationComponent(),
+                AdditionalInformationComponent(
+                  iconData: Icons.water_drop,
+                  dataInfo: 'Humidity',
+                  tempData: '90',
+                ),
+                AdditionalInformationComponent(
+                  iconData: Icons.air,
+                  dataInfo: 'Wind Speed',
+                  tempData: '7.67',
+                ),
+                AdditionalInformationComponent(
+                  iconData: Icons.umbrella,
+                  dataInfo: 'Pressure',
+                  tempData: '1006',
+                ),
               ],
             ),
           ],
