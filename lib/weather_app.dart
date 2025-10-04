@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:weather_app_flutter/additional_information_component.dart';
 import 'package:weather_app_flutter/hourly_forecast_component.dart';
@@ -29,27 +31,39 @@ class WeatherApp extends StatelessWidget {
         child: Column(
           children: [
             // Main card
-            Card(
-              color: const Color.fromARGB(255, 47, 49, 51),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: SizedBox(
-                width: double.infinity,
-                height: 180,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text(
-                      '300.67 K',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
+            SizedBox(
+              width: double.infinity,
+              child: Card(
+                color: const Color.fromARGB(255, 47, 49, 51),
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.all(16),
+                      child: Column(
+                        children: [
+                          Text(
+                            '300.67 K',
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                  
+                          SizedBox(height: 16),
+                          Icon(Icons.cloud, size: 60),
+                  
+                          SizedBox(height: 16),
+                          Text('Rain', style: TextStyle(fontSize: 16)),
+                        ],
                       ),
                     ),
-                    Icon(Icons.cloud, size: 60),
-                    Text('Rain', style: TextStyle(fontSize: 16)),
-                  ],
+                  ),
                 ),
               ),
             ),
@@ -60,7 +74,7 @@ class WeatherApp extends StatelessWidget {
               alignment: AlignmentGeometry.centerLeft,
               child: Text(
                 'Weather Forecast',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
               ),
             ),
 
@@ -68,7 +82,7 @@ class WeatherApp extends StatelessWidget {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                spacing: 4,
+                spacing: 2,
                 children: [
                   HourlyForecastComponent(),
                   HourlyForecastComponent(),
@@ -84,7 +98,7 @@ class WeatherApp extends StatelessWidget {
               alignment: AlignmentGeometry.centerLeft,
               child: Text(
                 'Additional Information',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
               ),
             ),
 

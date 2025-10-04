@@ -6,9 +6,9 @@ class HourlyForecastComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color.fromARGB(255, 47, 49, 51),
+      color: const Color.fromARGB(255, 48, 48, 48),
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         child: SizedBox(
           width: 80,
           child: Column(
@@ -16,10 +16,10 @@ class HourlyForecastComponent extends StatelessWidget {
             children: [
               Text(
                 '09:00',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
-              Icon(Icons.cloud, size: 35),
-              Text('301.17'),
+              Icon(Icons.cloud, size: 30),
+              Text('301.17', style: TextStyle(fontSize: 12)),
             ],
           ),
         ),

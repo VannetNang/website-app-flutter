@@ -7,11 +7,11 @@ class AdditionalInformationComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(Icons.water_drop, size: 35),
+        Icon(Icons.water_drop, size: 30),
         const SizedBox(height: 5),
         Text('Humidity', style: TextStyle(color: Colors.grey),),
         const SizedBox(height: 5),
-        Text('90', style: TextStyle(fontSize: 18),),
+        Text('90', style: TextStyle(fontSize: 16),),
       ],
     );
   }
