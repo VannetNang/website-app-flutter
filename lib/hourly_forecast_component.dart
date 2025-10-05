@@ -21,11 +21,14 @@ class HourlyForecastComponent extends StatelessWidget {
         child: SizedBox(
           width: 80,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             spacing: 4,
             children: [
               Text(
                 hourlyTime,
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               Icon(hourlyIcon, size: 30),
               Text(hourlyTemp),
