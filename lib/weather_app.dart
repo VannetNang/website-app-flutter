@@ -16,8 +16,6 @@ class WeatherApp extends StatefulWidget {
 
 class _WeatherAppState extends State<WeatherApp> {
   Future getWeather() async {
-    final apiKey = 'ce34b0744ea8f4d0ce876f1f479ae494';
-
     try {
       final response = await http.get(
         Uri.parse(
