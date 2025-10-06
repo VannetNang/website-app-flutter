@@ -37,21 +37,39 @@ class _WeatherAppState extends State<WeatherApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Weather App',
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+        title: Row(
+          children: [
+            Expanded(
+              flex: 7,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Image.asset('assets/images/logo.png', height: 40),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Weather App',
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
+
+            Expanded(
+              flex: 3,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  icon: Icon(Icons.refresh),
+                  onPressed: () {
+                    setState(() {
+                      getWeather();
+                    });
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {
-              setState(() {
-                getWeather();
-              });
-            },
-            icon: Icon(Icons.refresh),
-          ),
-        ],
       ),
 
       body: FutureBuilder(
