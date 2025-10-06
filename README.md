@@ -1,3 +1,5 @@
+<img src="assets/images/thumbnail.png" alt="Thumbnail Banner" width="100%" />
+
 # 🌤️ Weather App Flutter
 
 A simple and lightweight **Flutter Weather App** that displays the **current weather in Phnom Penh, Cambodia**, using live data fetched from a weather API.  
